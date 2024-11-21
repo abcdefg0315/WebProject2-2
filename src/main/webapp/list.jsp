@@ -11,17 +11,34 @@
 <%@ include file="top.jsp" %>
 <div class="container mt-5">
   <h1 class="mb-4">User List</h1>
+
+  <!-- 검색 폼 -->
+  <form method="get" action="<%= request.getContextPath() %>/list.jsp" class="mb-4">
+    <div class="form-group">
+      <input type="text" name="search" class="form-control" placeholder="Search users by name" value="<%= request.getParameter("search") != null ? request.getParameter("search") : "" %>">
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+
   <%
     String url = "jdbc:mariadb://walab.handong.edu:3306/OSS24_22300383";
     String username = "OSS24_22300383";
     String password = "HunieD8z";
     ResultSet rs = null;
 
+    String searchQuery = request.getParameter("search"); // 검색어 가져오기
+    String query = "SELECT * FROM person";
+
+    // 검색어가 있을 경우 쿼리에 조건 추가
+    if (searchQuery != null && !searchQuery.trim().isEmpty()) {
+      query += " WHERE name LIKE '%" + searchQuery + "%'";
+    }
+
     try {
       // 데이터베이스 연결
       Connection conn = DriverManager.getConnection(url, username, password);
       Statement stmt = conn.createStatement();
-      rs = stmt.executeQuery("SELECT * FROM person");
+      rs = stmt.executeQuery(query);
 
       // 데이터베이스 결과를 request 속성에 설정
       request.setAttribute("resultSet", rs);
