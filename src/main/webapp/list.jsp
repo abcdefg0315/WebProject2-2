@@ -26,6 +26,7 @@
       // 데이터베이스 결과를 request 속성에 설정
       request.setAttribute("resultSet", rs);
   %>
+  <a href="<%= request.getContextPath() %>/write.jsp" class="btn btn-primary btn-sm mt-3">Add</a>
   <jsp:include page="view.jsp" />
   <%
     // 자원 정리는 view.jsp에서 수행

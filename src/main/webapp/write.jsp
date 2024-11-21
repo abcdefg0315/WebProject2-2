@@ -27,6 +27,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
+    <button type="button" class="btn btn-danger mt-3" onclick="location.href='list.jsp'">Go Back</button>
     <%
         // MariaDB 연결 정보 설정 (DB 정보는 실제 사용 환경에 맞게 변경하세요)
         String url = "jdbc:mariadb://walab.handong.edu:3306/OSS24_22300383";

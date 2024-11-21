@@ -32,7 +32,7 @@
     <div class="alert alert-danger" role="alert">
         모든 필드를 입력해 주세요.
     </div>
-    <a href="add_user.jsp" class="btn btn-primary mt-3">Go Back</a>
+    <a href="list.jsp" class="btn btn-primary mt-3">Go Back</a>
     <%
     } else {
         int age = 0;
@@ -43,7 +43,7 @@
     <div class="alert alert-danger" role="alert">
         나이는 숫자여야 합니다.
     </div>
-    <a href="add_user.jsp" class="btn btn-primary mt-3">Go Back</a>
+    <a href="list.jsp" class="btn btn-primary mt-3">Go Back</a>
     <%
             return; // 잘못된 입력이므로 실행을 중단
         }
@@ -85,7 +85,6 @@
             }
         }
     %>
-    <a href="add_user.jsp" class="btn btn-primary mt-3">Go Back</a> <!-- 작성 페이지로 돌아가기 -->
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
