@@ -11,9 +11,9 @@
 <div class="container mt-5">
     <%
         // MariaDB 연결 정보 설정
-        String url = "jdbc:mariadb://localhost:3306/project_db"; // 실제 DB 이름으로 변경
-        String username = "root"; // DB 사용자 이름
-        String password = "root"; // DB 비밀번호
+        String url = "jdbc:mariadb://walab.handong.edu:3306/OSS24_22300383"; // 실제 DB 이름으로 변경
+        String username = "OSS24_22300383"; // DB 사용자 이름
+        String password = "HunieD8z"; // DB 비밀번호
 
         // URL 매개변수로 전달된 ID 가져오기
         String idParam = request.getParameter("id");
@@ -30,7 +30,7 @@
 
         // 데이터베이스에서 해당 ID에 대한 이름을 조회
         try (Connection conn = DriverManager.getConnection(url, username, password);
-             PreparedStatement pstmt = conn.prepareStatement("SELECT name FROM sample_table WHERE id = ?")) {
+             PreparedStatement pstmt = conn.prepareStatement("SELECT name FROM person WHERE id = ?")) {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
 
@@ -72,7 +72,7 @@
 
             if (idToDelete != null && !idToDelete.trim().isEmpty()) {
                 try (Connection conn = DriverManager.getConnection(url, username, password);
-                     PreparedStatement pstmt = conn.prepareStatement("DELETE FROM sample_table WHERE id = ?")) {
+                     PreparedStatement pstmt = conn.prepareStatement("DELETE FROM person WHERE id = ?")) {
                     pstmt.setInt(1, Integer.parseInt(idToDelete));
                     int result = pstmt.executeUpdate();
 

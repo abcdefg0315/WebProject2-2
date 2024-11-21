@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JDBCUtil {
-    private static final String URL = "jdbc:mariadb://localhost:3306/project_db";
-    private static final String USER = "root";
-    private static final String PASSWORD = "root";
+    private static final String URL = "jdbc:mariadb://walab.handong.edu:3306/OSS24_22300383";
+    private static final String USER = "OSS24_22300383";
+    private static final String PASSWORD = "HunieD8z";
 
     static {
         try {

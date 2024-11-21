@@ -12,16 +12,16 @@
 <div class="container mt-5">
   <h1 class="mb-4">User List</h1>
   <%
-    String url = "jdbc:mariadb://localhost:3306/project_db";
-    String username = "root";
-    String password = "root";
+    String url = "jdbc:mariadb://walab.handong.edu:3306/OSS24_22300383";
+    String username = "OSS24_22300383";
+    String password = "HunieD8z";
     ResultSet rs = null;
 
     try {
       // 데이터베이스 연결
       Connection conn = DriverManager.getConnection(url, username, password);
       Statement stmt = conn.createStatement();
-      rs = stmt.executeQuery("SELECT * FROM sample_table");
+      rs = stmt.executeQuery("SELECT * FROM person");
 
       // 데이터베이스 결과를 request 속성에 설정
       request.setAttribute("resultSet", rs);

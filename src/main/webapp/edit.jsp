@@ -12,9 +12,9 @@
     <h2>Edit User</h2>
     <%
         // MariaDB 연결 정보 설정
-        String url = "jdbc:mariadb://localhost:3306/project_db"; // 실제 DB 이름으로 변경
-        String username = "root"; // DB 사용자 이름
-        String password = "root"; // DB 비밀번호
+        String url = "jdbc:mariadb://walab.handong.edu:3306/OSS24_22300383";
+        String username = "OSS24_22300383";
+        String password = "HunieD8z";
 
         String idParam = request.getParameter("id");
         if (idParam == null || idParam.trim().isEmpty()) {
@@ -32,7 +32,7 @@
 
         // 데이터베이스에서 기존 사용자 정보 조회
         try (Connection conn = DriverManager.getConnection(url, username, password);
-             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM sample_table WHERE id = ?")) {
+             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM person WHERE id = ?")) {
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
 

@@ -12,9 +12,9 @@
     <h2>Edit Result</h2>
     <%
         // MariaDB 연결 정보 설정
-        String url = "jdbc:mariadb://localhost:3306/project_db"; // 실제 DB 이름으로 변경
-        String username = "root"; // DB 사용자 이름
-        String password = "root"; // DB 비밀번호
+        String url = "jdbc:mariadb://walab.handong.edu:3306/OSS24_22300383";
+        String username = "OSS24_22300383";
+        String password = "HunieD8z";
 
         // 폼 데이터 가져오기
         String idParam = request.getParameter("id");
@@ -40,7 +40,7 @@
         // 데이터베이스 업데이트 로직
         try (Connection conn = DriverManager.getConnection(url, username, password);
              PreparedStatement pstmt = conn.prepareStatement(
-                     "UPDATE sample_table SET name = ?, age = ?, email = ? WHERE id = ?")) {
+                     "UPDATE person SET name = ?, age = ?, email = ? WHERE id = ?")) {
             pstmt.setString(1, updatedName);
             pstmt.setInt(2, updatedAge);
             pstmt.setString(3, updatedEmail);

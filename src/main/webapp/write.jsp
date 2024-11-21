@@ -29,9 +29,9 @@
 
     <%
         // MariaDB 연결 정보 설정 (DB 정보는 실제 사용 환경에 맞게 변경하세요)
-        String url = "jdbc:mariadb://localhost:3306/project_db"; // 실제 DB 이름으로 변경
-        String username = "root"; // DB 사용자 이름으로 변경
-        String password = "root"; // DB 비밀번호로 변경
+        String url = "jdbc:mariadb://walab.handong.edu:3306/OSS24_22300383";
+        String username = "OSS24_22300383";
+        String password = "HunieD8z";
 
         // POST 요청인 경우 폼 데이터를 처리
         if ("POST".equalsIgnoreCase(request.getMethod())) {
@@ -59,7 +59,7 @@
                         // 데이터베이스 연결
                         Class.forName("org.mariadb.jdbc.Driver");
                         conn = DriverManager.getConnection(url, username, password);
-                        String sql = "INSERT INTO sample_table (name, age, email) VALUES (?, ?, ?)";
+                        String sql = "INSERT INTO person (name, age, email) VALUES (?, ?, ?)";
                         pstmt = conn.prepareStatement(sql);
                         pstmt.setString(1, name);
                         pstmt.setInt(2, age);

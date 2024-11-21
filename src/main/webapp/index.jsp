@@ -16,9 +16,9 @@
     <th>Actions</th>
   </tr>
   <%
-    String url = "jdbc:mariadb://localhost:3306/project_db";
-    String username = "root";
-    String password = "root";
+    String url = "jdbc:mariadb://walab.handong.edu:3306/OSS24_22300383";
+    String username = "OSS24_22300383";
+    String password = "HunieD8z";
 
     try {
       // 데이터베이스 연결
